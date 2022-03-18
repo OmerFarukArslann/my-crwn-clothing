@@ -1,6 +1,4 @@
-import CategoryContainer from "./components/categories-container/categories-container.component";
-
-import "./categories.styles.scss";
+import Directory from "./components/Directory/Directory.component";
 
 const App = () => {
   const categories = [
@@ -31,7 +29,7 @@ const App = () => {
     },
   ];
 
-  return <CategoryContainer categories={categories} />;
+  return <Directory categories={categories} />;
 };
 
 export default App;
