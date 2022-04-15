@@ -1,29 +1,20 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-
-import "./directory-item.styles.scss";
+import {
+  DirectoryItemContainer,
+  BackgroundImage,
+  Body,
+} from "./directory-item.styles.jsx";
 
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title } = category;
   return (
-    <Fragment>
-      <Link
-        className="directory-item-container"
-        to={`shop/${title.toLowerCase()}`}
-      >
-        <div
-          className="background-image"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-          }}
-        />
-        <div className="body">
-          <h2>{title}</h2>
+    <DirectoryItemContainer to={`shop/${title.toLowerCase()}`}>
+      <BackgroundImage imageUrl={imageUrl} />
+      <Body>
+        <h2>{title}</h2>
 
-          <p>SHOP NOW</p>
-        </div>{" "}
-      </Link>
-    </Fragment>
+        <p>SHOP NOW</p>
+      </Body>{" "}
+    </DirectoryItemContainer>
   );
 };
 
